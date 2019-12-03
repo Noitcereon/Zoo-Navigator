@@ -8,17 +8,6 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="CornflowerBlue"></Setter>
-            <Setter Property="Width" Value="150"></Setter>
-            <Setter Property="Margin" Value="3"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="" Value="Center"></Setter>
-
-        </Style>
-    </Page.Resources>
-
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Assets/kort-over-zoo-2019-023.png"></ImageBrush>
@@ -55,12 +44,23 @@
 
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
               Margin="10">
+            <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
+            <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
+            <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
+            <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
 
-            <Button Content="Kort"></Button>
-            <Button Content="Menu"></Button>
-            <Button Content="Tilbage" Background="Crimson"></Button>
         </StackPanel>
-        <!-- Button grid END -->
+        <!-- Button panel END -->
+        <Rectangle Grid.Row="0" Grid.Column="1"
+                   Grid.ColumnSpan="8" Grid.RowSpan="10">
+            <FlyoutBase.AttachedFlyout>
+                <MenuFlyout>
+                    <MenuFlyoutItem Text="Menu item 1"></MenuFlyoutItem>
+                    <MenuFlyoutItem Text="Menu item 2"></MenuFlyoutItem>
+                </MenuFlyout>
+            </FlyoutBase.AttachedFlyout>
+        </Rectangle>
+
 
     </Grid>
     <!-- Big Grid END -->
