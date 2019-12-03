@@ -5,8 +5,13 @@
     xmlns:local="using:Zoo_Navigator"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Zoo_Navigator.ViewModels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <viewModels:MainViewModel/>
+    </Page.DataContext>
 
     <Grid>
         <Grid.Background>
@@ -41,8 +46,8 @@
         </Grid.RowDefinitions>
         <!-- 10 Rows -->
 
-
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+        <!-- temporary background on StackPanel. -->
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
@@ -51,16 +56,18 @@
 
         </StackPanel>
         <!-- Button panel END -->
-        <Rectangle Grid.Row="0" Grid.Column="1"
-                   Grid.ColumnSpan="8" Grid.RowSpan="10">
-            <FlyoutBase.AttachedFlyout>
-                <MenuFlyout>
-                    <MenuFlyoutItem Text="Menu item 1"></MenuFlyoutItem>
-                    <MenuFlyoutItem Text="Menu item 2"></MenuFlyoutItem>
-                </MenuFlyout>
-            </FlyoutBase.AttachedFlyout>
-        </Rectangle>
 
+        <!-- Popup is still missing open/close functionality and styling -->
+        <Popup Grid.Row="9" Grid.Column="1" VerticalOffset="200" HorizontalOffset="200" IsOpen="{Binding IsMenuOpen}" x:Name="StandardPopup">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                        Background="Black"
+                        BorderThickness="2" Width="200" Height="200">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Blue">
+                    <TextBlock Text="Simple Popup" FontSize="24" HorizontalAlignment="Center"/>
+                    <Button Content="Close" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Popup>
 
     </Grid>
     <!-- Big Grid END -->

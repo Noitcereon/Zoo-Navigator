@@ -11,7 +11,13 @@ namespace Zoo_Navigator.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
+        private bool _isMenuOpen = true;
 
+        public bool IsMenuOpen
+        {
+            get => _isMenuOpen;
+            set => _isMenuOpen = value;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
