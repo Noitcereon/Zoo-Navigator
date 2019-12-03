@@ -8,5 +8,6 @@ namespace Zoo_Navigator.Models
 {
     class Category
     {
+
     }
 }

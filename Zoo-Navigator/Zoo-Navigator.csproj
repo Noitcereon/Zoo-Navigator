@@ -127,6 +127,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\RedPanda.cs" />
     <Compile Include="Models\Tiger.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\AnimalPage.xaml.cs">
