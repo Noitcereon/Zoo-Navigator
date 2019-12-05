@@ -8,6 +8,11 @@ namespace Zoo_Navigator.Models
 {
     public class Category
     {
-        // TODO: make category model.
+        private Common.Enum _areaCategory;
+
+        public Category(Common.Enum areaCategory)
+        {
+            _areaCategory = areaCategory;
+        }
     }
 }
