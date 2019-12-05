@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Zoo_Navigator.Models
 {
-    class Category
+    public class Category
     {
-
+        // TODO: make category model.
     }
 }

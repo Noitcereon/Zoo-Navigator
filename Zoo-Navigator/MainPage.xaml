@@ -53,19 +53,20 @@
             <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
             <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
             <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
-
         </StackPanel>
         <!-- Button panel END -->
 
         <!-- Popup is still missing open/close functionality and styling -->
-        <Popup Grid.Row="9" Grid.Column="1" VerticalOffset="200" HorizontalOffset="200" IsOpen="{Binding IsMenuOpen}" x:Name="StandardPopup">
+        <Popup Grid.Row="9" Grid.Column="4" VerticalOffset="200" HorizontalOffset="200" IsOpen="{Binding IsMenuOpen}" x:Name="StandardPopup">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                         Background="Black"
                         BorderThickness="2" Width="200" Height="200">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Blue">
-                    <TextBlock Text="Simple Popup" FontSize="24" HorizontalAlignment="Center"/>
-                    <Button Content="Close" HorizontalAlignment="Center"/>
-                </StackPanel>
+                <ScrollViewer>
+                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Background="Blue">
+                        <TextBlock Text="Simple Popup" FontSize="24" HorizontalAlignment="Center"/>
+                        <Button Content="Close" HorizontalAlignment="Center"/>
+                    </Canvas>
+                </ScrollViewer>
             </Border>
         </Popup>
 
