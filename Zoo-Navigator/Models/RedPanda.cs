@@ -9,12 +9,10 @@ namespace Zoo_Navigator.Models
 {
     public class RedPanda : Animal
     {
-        private string _imagePath;
-
-        public RedPanda(string imagePath)
-            : base("Red Panda", imagePath, Enum.AreaCategory.Asien)
+        public RedPanda(int animalId, string imagePath)
+            : base(animalId, species: "Tiger", imagePath, Enum.AreaCategory.Asien)
         {
-            _imagePath = imagePath;
+
         }
     }
 }

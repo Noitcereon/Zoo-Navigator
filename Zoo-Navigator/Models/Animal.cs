@@ -16,9 +16,9 @@ namespace Zoo_Navigator.Models
         private string _imagePath;
         private Common.Enum.AreaCategory _category;
 
-        public Animal(string species, string imagePath, Common.Enum.AreaCategory category)
+        public Animal(int animalId, string species, string imagePath, Common.Enum.AreaCategory category)
         {
-            _animalId = Convert.ToInt16(new Guid());
+            _animalId = animalId;
             _species = species;
             _imagePath = imagePath;
             _category = category;

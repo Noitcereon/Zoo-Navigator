@@ -9,12 +9,10 @@ namespace Zoo_Navigator.Models
 {
     public class Tiger : Animal
     {
-        private string _imagePath;
 
-        public Tiger(string imagePath)
-        :base(species:"Tiger", imagePath, Enum.AreaCategory.Asien)
+        public Tiger(int animalId, string imagePath)
+        :base(animalId ,species:"Tiger", imagePath, Enum.AreaCategory.Asien)
         {
-            _imagePath = imagePath;
         }
     }
 }
