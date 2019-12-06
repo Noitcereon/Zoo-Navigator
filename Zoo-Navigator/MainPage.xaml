@@ -6,6 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Zoo_Navigator.ViewModels"
+    xmlns:custom="using:Microsoft.Xaml.Interactivity" xmlns:Custom1="using:'Microsoft.Xaml.interactions.Core"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -57,7 +59,7 @@
         <!-- Button panel END -->
 
         <!-- Popup is still missing open/close functionality and styling -->
- 
+
         <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" Grid.Row="4" Width="300">
 
 
@@ -80,6 +82,17 @@
             </StackPanel>
 
         </Popup>
+
+        <Button Padding="-3" Grid.Column="1" Margin="10,50,0,0" Grid.Row="3" VerticalAlignment="Top" Height="70" Width="91" Grid.RowSpan="2" >
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="../Assets/c1_1720911_190729141725.jpg"></Image>
+            </StackPanel>
+            <custom:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="Zoo_Navigator.Views.AnimalPage"/>
+                </core:EventTriggerBehavior>
+            </custom:Interaction.Behaviors>
+        </Button>
 
     </Grid>
     <!-- Big Grid END -->
