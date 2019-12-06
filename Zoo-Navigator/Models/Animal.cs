@@ -24,6 +24,11 @@ namespace Zoo_Navigator.Models
             _category = category;
             _animalFacts = new List<string>();
         }
+        public Animal()
+        {
+           
+        }
+
 
         public List<string> AnimalFacts
         {
