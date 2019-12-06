@@ -45,6 +45,10 @@ namespace Zoo_Navigator.ViewModels
             _animals.Add(redPanda.AnimalId, redPanda);
             _animals.Add(tiger.AnimalId, tiger);
             _animals.Add(tiger.AnimalId+3, tiger);
+            _animals.Add(redPanda.AnimalId+4, redPanda);
+            _animals.Add(redPanda.AnimalId+5, redPanda);
+            _animals.Add(tiger.AnimalId+8, tiger);
+
 
             _popCommand = new RelayCommand(Tænd);
             _isMenuOpen = false;
