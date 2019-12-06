@@ -8,7 +8,88 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Height="1000" VerticalAlignment="Center">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg"></ImageBrush>
+        </Grid.Background>
+        <!-- Big grid -->
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!-- 10 Columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- 10 Rows -->
+
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                    Margin="10">
+            <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
+            <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
+            <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
+            <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="9" Margin="150,19,0,78" Grid.Row="1">
+            <Image Source="../Assets/c1_1720911_190729141725.jpg"></Image>
+
+
+            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
+                <TextBlock Text="Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!" />
+            </StackPanel>
+
+            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Tigers are easily recognizable with their dark vertical stripes and reddish/orange fur."/>
+            </StackPanel>
+
+            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
+                <TextBlock Text="The Bengal tiger is the most common tiger." />
+            </StackPanel>
+
+            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Tigers live between 20-26 years in the wild."/>
+            </StackPanel>
+
+            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!" />
+            </StackPanel>
+
+            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Adult tigers generally live alone."/>
+            </StackPanel>
+
+            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Unlike most other cats, tigers are great swimmers and actually like the water." />
+            </StackPanel>
+
+            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
+                <TextBlock Text="Cubs are born blind and only open their eyes 1-2 weeks after birth."/>
+            </StackPanel>
+
+        </StackPanel>
 
     </Grid>
+
 </Page>
