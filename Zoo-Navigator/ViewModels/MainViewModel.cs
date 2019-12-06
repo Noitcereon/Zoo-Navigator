@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Zoo_Navigator.Annotations;
+using Zoo_Navigator.Common;
 using Zoo_Navigator.Models;
 using Enum = Zoo_Navigator.Common.Enum;
 
@@ -15,6 +16,7 @@ namespace Zoo_Navigator.ViewModels
     {
         private bool _isMenuOpen = true;
         private Dictionary<int, Animal> _animals;
+        private RelayCommand _popCommand;
 
         public MainViewModel()
         {
@@ -42,12 +44,26 @@ namespace Zoo_Navigator.ViewModels
 
             _animals.Add(redPanda.AnimalId, redPanda);
             _animals.Add(tiger.AnimalId, tiger);
+            _animals.Add(tiger.AnimalId+3, tiger);
+
+            _popCommand = new RelayCommand(Tænd);
+            _isMenuOpen = false;
+        }
+
+        private void Tænd()
+        {
+            IsMenuOpen = true;
         }
 
         public bool IsMenuOpen
         {
             get => _isMenuOpen;
-            set => _isMenuOpen = value;
+            set { _isMenuOpen = value; OnPropertyChanged(); }
+        }
+
+        public RelayCommand PopCommand
+        {
+            get { return _popCommand; }
         }
 
         public Dictionary<int, Animal> Animals

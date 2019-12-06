@@ -50,24 +50,35 @@
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
+            <Button Content="Kort" Style="{StaticResource MenuButton}" Click="ButtonBase2_OnClick"></Button>
+            <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
             <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
         </StackPanel>
         <!-- Button panel END -->
 
         <!-- Popup is still missing open/close functionality and styling -->
-        <Popup Grid.Row="9" Grid.Column="4" VerticalOffset="200" HorizontalOffset="200" IsOpen="{Binding IsMenuOpen}" x:Name="StandardPopup">
-            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
-                        Background="Black"
-                        BorderThickness="2" Width="200" Height="200">
-                <ScrollViewer>
-                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Background="Blue">
-                        <TextBlock Text="Simple Popup" FontSize="24" HorizontalAlignment="Center"/>
-                        <Button Content="Close" HorizontalAlignment="Center"/>
-                    </Canvas>
-                </ScrollViewer>
-            </Border>
+ 
+        <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" Grid.Row="4" Width="300">
+
+
+            <StackPanel Background="LightGray" HorizontalAlignment="Center" Width="250" >
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Test" TextAlignment="Center" FontSize="40" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <TextBlock Text="Asien" TextAlignment="Center" FontSize="40"></TextBlock>
+                <TextBlock Text="Børn"></TextBlock>
+                <TextBlock Text="Norden"></TextBlock>
+                <TextBlock Text="Savanen"></TextBlock>
+                <TextBlock Text="Toiletter"></TextBlock>
+
+            </StackPanel>
+
         </Popup>
 
     </Grid>

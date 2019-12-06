@@ -10,7 +10,7 @@ namespace Zoo_Navigator.Models
     public class RedPanda : Animal
     {
         public RedPanda(int animalId, string imagePath)
-            : base(animalId, species: "Tiger", imagePath, Enum.AreaCategory.Asien)
+            : base(animalId, species: "Red Panda", imagePath, Enum.AreaCategory.Asien)
         {
 
         }
