@@ -21,11 +21,12 @@ namespace Zoo_Navigator.ViewModels
         private Dictionary<int, Animal> _animals;
         private RelayCommand _popCommand;
         private RelayCommand _backCommand;
+        private List<Category> _categories;
         private readonly SharedKnowledge _shared;
 
         public MainViewModel()
         {
-            Animal tiger = new Tiger(1,"undefined");
+            Animal tiger = new Tiger(1, "undefined");
             tiger.AddAnimalFact("fact 1");
             tiger.AddAnimalFact("fact 2");
             tiger.AddAnimalFact("fact 3");
@@ -49,30 +50,45 @@ namespace Zoo_Navigator.ViewModels
 
             _animals.Add(redPanda.AnimalId, redPanda);
             _animals.Add(tiger.AnimalId, tiger);
+
             /*
             _animals.Add(tiger.AnimalId+3, tiger);
             _animals.Add(redPanda.AnimalId+4, redPanda);
             _animals.Add(redPanda.AnimalId+5, redPanda);
             _animals.Add(tiger.AnimalId+8, tiger);
+            */
+            _categories = new List<Category>();
 
-    */
+            Category asien = new Category(Enum.AreaCategory.Asien, "Asien");
+            Category norden = new Category(Enum.AreaCategory.Norden, "Norden");
+            Category savannen = new Category(Enum.AreaCategory.Savannen, "Savannen");
+            Category boerneZoo = new Category(Enum.AreaCategory.Børnezoo, "BørneZoo");
+            Category verdensPladsen = new Category(Enum.AreaCategory.Verdenspladsen, "Verdenspladsen");
+
+            _categories.Add(asien);
+            _categories.Add(norden);
+            _categories.Add(savannen);
+            _categories.Add(boerneZoo);
+            _categories.Add(verdensPladsen);
+
             _popCommand = new RelayCommand(Tænd);
             _backCommand = new RelayCommand(GoBack);
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
-
+        #region Methods
         private void Tænd()
         {
             IsMenuOpen = true;
-           
         }
 
         private void GoBack()
         {
-
+            // TODO: GoBack functionality
         }
+        #endregion
 
+        #region Properties
         public bool IsMenuOpen
         {
             get => _isMenuOpen;
@@ -94,10 +110,17 @@ namespace Zoo_Navigator.ViewModels
             get { return _backCommand; }
         }
 
+        public List<Category> Categories
+        {
+            get { return _categories; }
+        }
+
         public Dictionary<int, Animal> Animals
         {
             get { return _animals; }
         }
+        #endregion
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
