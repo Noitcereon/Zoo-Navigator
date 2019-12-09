@@ -20,6 +20,7 @@ namespace Zoo_Navigator.ViewModels
         private bool _isMenuOpen = true;
         private Dictionary<int, Animal> _animals;
         private RelayCommand _popCommand;
+        private RelayCommand _backCommand;
         private readonly SharedKnowledge _shared;
 
         public MainViewModel()
@@ -56,6 +57,7 @@ namespace Zoo_Navigator.ViewModels
 
     */
             _popCommand = new RelayCommand(Tænd);
+            _backCommand = new RelayCommand(GoBack);
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
@@ -64,6 +66,11 @@ namespace Zoo_Navigator.ViewModels
         {
             IsMenuOpen = true;
            
+        }
+
+        private void GoBack()
+        {
+
         }
 
         public bool IsMenuOpen
@@ -80,6 +87,11 @@ namespace Zoo_Navigator.ViewModels
         public RelayCommand PopCommand
         {
             get { return _popCommand; }
+        }
+
+        public RelayCommand BackCommand
+        {
+            get { return _backCommand; }
         }
 
         public Dictionary<int, Animal> Animals
