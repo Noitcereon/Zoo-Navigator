@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Zoo_Navigator.ViewModels"
-    xmlns:custom="using:Microsoft.Xaml.Interactivity" xmlns:Custom1="using:'Microsoft.Xaml.interactions.Core"
+    xmlns:custom="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -54,7 +54,8 @@
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}" Click="ButtonBase2_OnClick"></Button>
             <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
+
         </StackPanel>
         <!-- Button panel END -->
 
@@ -93,7 +94,7 @@
                 </core:EventTriggerBehavior>
             </custom:Interaction.Behaviors>
         </Button>
-
+        
     </Grid>
     <!-- Big Grid END -->
 </Page>

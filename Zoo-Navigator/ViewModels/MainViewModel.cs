@@ -17,6 +17,7 @@ namespace Zoo_Navigator.ViewModels
         private bool _isMenuOpen = true;
         private Dictionary<int, Animal> _animals;
         private RelayCommand _popCommand;
+        private RelayCommand _backCommand;
 
         public MainViewModel()
         {
@@ -51,6 +52,7 @@ namespace Zoo_Navigator.ViewModels
 
 
             _popCommand = new RelayCommand(Tænd);
+            _backCommand = new RelayCommand(GoBack);
             _isMenuOpen = false;
         }
 
@@ -59,10 +61,20 @@ namespace Zoo_Navigator.ViewModels
             IsMenuOpen = true;
         }
 
+        private void GoBack()
+        {
+
+        }
+
         public bool IsMenuOpen
         {
             get => _isMenuOpen;
             set { _isMenuOpen = value; OnPropertyChanged(); }
+        }
+
+        public RelayCommand BackCommand
+        {
+            get { return _backCommand; }
         }
 
         public RelayCommand PopCommand
