@@ -26,5 +26,13 @@ namespace Zoo_Navigator.Views
         {
             this.InitializeComponent();
         }
+
+        private void Button_GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

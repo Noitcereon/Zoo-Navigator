@@ -52,9 +52,10 @@
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <Button Content="Kort" Style="{StaticResource MenuButton}" Click="ButtonBase2_OnClick"></Button>
+            <!-- TODO: replace onclick navigation with relaycommands. -->
+            <Button Content="Kort" Style="{StaticResource MenuButton}" Click="Button_NavigateCheat_Click"></Button>
             <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Click="Button_GoBack_Click" Style="{StaticResource BackButton}"></Button>
 
         </StackPanel>
         <!-- Button panel END -->

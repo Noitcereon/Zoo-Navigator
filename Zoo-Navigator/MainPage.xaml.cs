@@ -29,9 +29,17 @@ namespace Zoo_Navigator
         }
 
 
-        private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
+        private void Button_NavigateCheat_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Categories));
+        }
+
+        private void Button_GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
     }
 }

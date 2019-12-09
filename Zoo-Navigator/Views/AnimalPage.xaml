@@ -47,16 +47,15 @@
         <!-- 10 Rows -->
         <!-- #endregion -->
 
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                     Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
             <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
-
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Click="Button_GoBack_Click" Style="{StaticResource BackButton}"></Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="9" Margin="150,19,0,78" Grid.Row="2">
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="8" Margin="150,19,0,78" Grid.Row="2">
             <Image Source="../Assets/c1_1720911_190729141725.jpg"></Image>
 
 
