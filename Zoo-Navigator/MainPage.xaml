@@ -87,11 +87,3 @@
     </Grid>
     <!-- Big Grid END -->
 </Page>
-
-
-<!-- Hardcoded menu content. -->
-<!--<TextBlock Text="Asien" TextAlignment="Center" FontSize="40"></TextBlock>
-            <TextBlock Text="Børn"></TextBlock>
-            <TextBlock Text="Norden"></TextBlock>
-            <TextBlock Text="Savanen"></TextBlock>
-            <TextBlock Text="Toiletter"></TextBlock>-->
