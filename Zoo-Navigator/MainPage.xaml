@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Zoo_Navigator.ViewModels"
-    xmlns:custom="using:Microsoft.Xaml.Interactivity" xmlns:Custom1="using:'Microsoft.Xaml.interactions.Core"
+    xmlns:custom="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -54,34 +54,24 @@
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}" Click="ButtonBase2_OnClick"></Button>
             <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
+
         </StackPanel>
         <!-- Button panel END -->
 
-        <!-- Popup is still missing open/close functionality and styling -->
-
-        <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" Grid.Row="4" Width="300">
-
-
-            <StackPanel Background="LightGray" HorizontalAlignment="Center" Width="250" >
-                <ListView>
-                    <ListView.ItemTemplate>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="6" Grid.Row="3" Width="300" Height="800">
+            <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True">
+                <ItemsControl ItemsSource="{Binding Categories}">
+                    <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Test" TextAlignment="Center" FontSize="40" />
+                            <StackPanel Background="OrangeRed" HorizontalAlignment="Center" Width="600">
+                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5" Content="{Binding AreaCategoryString}"></Button>
                             </StackPanel>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <TextBlock Text="Asien" TextAlignment="Center" FontSize="40"></TextBlock>
-                <TextBlock Text="Børn"></TextBlock>
-                <TextBlock Text="Norden"></TextBlock>
-                <TextBlock Text="Savanen"></TextBlock>
-                <TextBlock Text="Toiletter"></TextBlock>
-
-            </StackPanel>
-
-        </Popup>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Popup>
+        </StackPanel>
 
         <Button Padding="-3" Grid.Column="1" Margin="10,50,0,0" Grid.Row="3" VerticalAlignment="Top" Height="70" Width="91" Grid.RowSpan="2" >
             <StackPanel Orientation="Horizontal" >
