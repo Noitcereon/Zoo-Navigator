@@ -61,7 +61,7 @@
             <Button Content="Tilbage" Background="Crimson"/>
         </StackPanel>
 
-        <GridView ItemsSource="{Binding Animals}" SelectedItem="{Binding Instance.SelectedAnimal}" Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
+        <GridView ItemsSource="{Binding Animals}" SelectedItem="{Binding Instance.SelectedAnimal, Mode=TwoWay}" Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="350" Width="250" Margin="0">
