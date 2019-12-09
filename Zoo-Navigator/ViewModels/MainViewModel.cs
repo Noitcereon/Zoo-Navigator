@@ -84,8 +84,8 @@ namespace Zoo_Navigator.ViewModels
 
         private void GoBack()
         {
-            Frame F = (Frame)Window.Current.Content;
-            if (F.CanGoBack) F.GoBack();
+            Frame f = (Frame)Window.Current.Content;
+            if (f.CanGoBack) f.GoBack();
         }
         #endregion
 
