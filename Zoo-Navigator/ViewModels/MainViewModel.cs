@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
@@ -23,6 +24,7 @@ namespace Zoo_Navigator.ViewModels
         private RelayCommand _backCommand;
         private List<Category> _categories;
         private readonly SharedKnowledge _shared;
+        private RCO _nextCommand;
 
         public MainViewModel()
         {
@@ -73,6 +75,7 @@ namespace Zoo_Navigator.ViewModels
 
             _popCommand = new RelayCommand(Tænd);
             _backCommand = new RelayCommand(GoBack);
+            _nextCommand = new RCO(Next);
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
@@ -82,9 +85,18 @@ namespace Zoo_Navigator.ViewModels
             IsMenuOpen = true;
         }
 
+        private void Next(object obj)
+        {
+            _shared.SelectedAnimal = (Animal) obj;
+
+            Frame f = (Frame) Window.Current.Content;
+            f.Navigate(typeof(AnimalPage));
+        }
+
         private void GoBack()
         {
-            // TODO: GoBack functionality
+            Frame f = (Frame) Window.Current.Content;
+            if (f.CanGoBack) { f.GoBack();}
         }
         #endregion
 
@@ -108,6 +120,11 @@ namespace Zoo_Navigator.ViewModels
         public RelayCommand BackCommand
         {
             get { return _backCommand; }
+        }
+
+        public RCO NextCommand
+        {
+            get { return _nextCommand; }
         }
 
         public List<Category> Categories

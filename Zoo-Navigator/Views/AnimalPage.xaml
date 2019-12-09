@@ -1,48 +1,49 @@
 ﻿<Page
-    x:Class="Zoo_Navigator.Views.AnimalPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Zoo_Navigator.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Zoo_Navigator.ViewModels"
+    xmlns:Custom="using:Microsoft.Xaml.Interactivity" xmlns:Custom1="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="Zoo_Navigator.Views.AnimalPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <viewModels:MainViewModel></viewModels:MainViewModel>
+        <viewModels:MainViewModel/>
     </Page.DataContext>
 
     <Grid Height="1000" VerticalAlignment="Center">
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg"></ImageBrush>
+            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg"/>
         </Grid.Background>
         <!-- Big grid -->
         <!-- #region grid definition -->
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <!-- 10 Columns -->
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <!-- 10 Rows -->
         <!-- #endregion -->
@@ -50,19 +51,23 @@
         <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                     Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <Button Content="Kort" Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Menu" Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Command="{Binding BackCommand}" Click="Button_GoBack_Click" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Kort" Style="{StaticResource MenuButton}">
+                <Custom:Interaction.Behaviors>
+                    <Custom1:EventTriggerBehavior EventName="Click">
+                        <Custom1:NavigateToPageAction TargetPage="Zoo_Navigator.MainPage"/>
+                    </Custom1:EventTriggerBehavior>
+                </Custom:Interaction.Behaviors>
+            </Button>
+            <Button Content="Menu" Style="{StaticResource MenuButton}"/>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="8" Margin="150,19,0,78" Grid.Row="2">
-            <Image Source="../Assets/c1_1720911_190729141725.jpg"></Image>
+            <Image Source="../Assets/c1_1720911_190729141725.jpg"/>
 
 
             <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
-                <ListView ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}">
-
-                </ListView>
+                <ListView ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}"/>
             </StackPanel>
 
             <!--<StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">

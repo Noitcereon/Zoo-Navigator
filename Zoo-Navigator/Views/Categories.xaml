@@ -60,28 +60,35 @@
 
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                     Margin="10">
-            <Button Content="Kort" Style="{StaticResource MenuButton}"/>
+            <Button Content="Kort" Style="{StaticResource MenuButton}">
+                <Custom:Interaction.Behaviors>
+                    <Custom1:EventTriggerBehavior EventName="Click">
+                        <Custom1:NavigateToPageAction TargetPage="Zoo_Navigator.MainPage" />
+                    </Custom1:EventTriggerBehavior>
+                </Custom:Interaction.Behaviors>
+            </Button>
             <Button Content="Menu" Style="{StaticResource MenuButton}"/>
-            <Button Content="Tilbage" Command="{Binding BackCommand}" Click="Button_GoBack_Click" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
         </StackPanel>
 
-        <GridView ItemsSource="{Binding Animals}" SelectedItem="{Binding Instance.SelectedAnimal, Mode=TwoWay}" Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
+        <GridView ItemsSource="{Binding Animals}" SelectedItem="{Binding Instance.SelectedAnimal, Mode=TwoWay}" x:Name="OuterRef"  Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height="350" Width="250" Margin="0">
-                        <Custom:Interaction.Behaviors>
-                            <Custom1:EventTriggerBehavior EventName="PointerPressed">
-                                <Custom1:NavigateToPageAction TargetPage="Zoo_Navigator.Views.AnimalPage"/>
-                            </Custom1:EventTriggerBehavior>
-                        </Custom:Interaction.Behaviors>
-                        <Border Background="black" Height="50" >
-                            <TextBlock Text="{Binding Value.Species}" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
-                        </Border>
-                        <StackPanel >
-                            <Image Source="../Assets/StoreLogo.png"/>
-                            <Image Source="{Binding Value.ImagePath}" Stretch="Fill" />
+                    <Button Command="{Binding ElementName=OuterRef, Path=DataContext.NextCommand}" CommandParameter="{Binding Mode=TwoWay}">
+                        <StackPanel Height="350" Width="250" Margin="0">
+                            <Border Background="black" Height="50" >
+                                <TextBlock Text="{Binding Value.Species}" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
+                            </Border>
+                            <StackPanel >
+
+                                <Image Source="../Assets/StoreLogo.png"/>
+                                <Image Source="{Binding Value.ImagePath}" Stretch="Fill" />
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </Button>
+
+
+
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>

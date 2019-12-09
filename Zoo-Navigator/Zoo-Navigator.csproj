@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\Enum.cs" />
+    <Compile Include="Common\RCO.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SharedKnowledge.cs" />
     <Compile Include="MainPage.xaml.cs">
