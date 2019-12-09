@@ -27,6 +27,7 @@
     </Page.DataContext>
 
     <Grid>
+        <!-- #region grid definition -->
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -52,6 +53,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
+        <!-- #endRegion -->
 
         <TextBlock Text="Asien" FontSize="80" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Top"  />
 
