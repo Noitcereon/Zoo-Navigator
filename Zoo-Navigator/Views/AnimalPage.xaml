@@ -66,14 +66,12 @@
             <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" />
 
             <StackPanel Background="DarkOrange" >
-                <ListBox Background="DarkOrange" ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}" Height="500" AllowFocusOnInteraction="False">
+                <ListBox Background="DarkOrange" ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}" Height="450" AllowFocusOnInteraction="False">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <ScrollViewer VerticalScrollMode="Enabled">
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding}" TextWrapping="Wrap"></TextBlock>
-                                    </StackPanel>
-                            </ScrollViewer>
+                            <StackPanel>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

@@ -85,9 +85,6 @@
                         </StackPanel>
 
                     </Button>
-
-
-
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
