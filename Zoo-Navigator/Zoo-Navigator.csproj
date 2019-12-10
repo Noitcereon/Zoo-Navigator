@@ -152,7 +152,6 @@
     <Content Include="Assets\pingviner 2.jpg" />
     <Content Include="Assets\sommerfugl.jpg" />
     <Content Include="Assets\Anaconda.jpg" />
-    <Content Include="Assets\Tiger.jpg" />
     <Content Include="Assets\Elephant.jpg" />
     <Content Include="Assets\panda 1.jpg" />
     <Content Include="Assets\panda 2.jpg" />
@@ -170,6 +169,7 @@
     <Content Include="Assets\abe.jpg" />
     <Content Include="Assets\rød-panda01.png" />
     <Content Include="Assets\savanne2.jpg" />
+    <Content Include="Assets\tiger-image.jpg" />
     <Content Include="Assets\Tucan.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

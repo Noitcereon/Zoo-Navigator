@@ -62,15 +62,16 @@
             <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="8" Margin="150,19,0,78" Grid.Row="2">
-            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}"/>
+        <!--  StackPanel -->
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="8" Margin="0, 0, 10, 0" HorizontalAlignment="Center" Width="500" Grid.Row="1">
+            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" MaxHeight="300"/>
 
             <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
                 <ItemsControl ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel MinHeight="40" MaxHeight="60">
-                                <TextBlock Text="{Binding}"></TextBlock>
+                            <StackPanel Orientation="Vertical" Padding="5">
+                                <TextBlock Text="{Binding}" FontSize="16" TextWrapping="Wrap"></TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
