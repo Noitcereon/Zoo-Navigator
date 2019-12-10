@@ -147,8 +147,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\1210-lavlandsregnskov-RT2048.jpg" />
-    <Content Include="Assets\c1_1720911_190729141725.jpg" />
+    <Content Include="Assets\kænguru 1.jpg" />
+    <Content Include="Assets\pengviner.jpg" />
+    <Content Include="Assets\pingviner 2.jpg" />
+    <Content Include="Assets\sommerfugl.jpg" />
+    <Content Include="Assets\Anaconda.jpg" />
+    <Content Include="Assets\Tiger.jpg" />
+    <Content Include="Assets\Elephant.jpg" />
+    <Content Include="Assets\panda 1.jpg" />
+    <Content Include="Assets\panda 2.jpg" />
+    <Content Include="Assets\giraf.jpg" />
+    <Content Include="Assets\Norden.jpg" />
+    <Content Include="Assets\leopard.jpg" />
+    <Content Include="Assets\kænguru 2.jpg" />
     <Content Include="Assets\kort-over-zoo-2019-023.png" />
+    <Content Include="Assets\løve.png" />
+    <Content Include="Assets\monkey-selfie - Copy.jpg" />
+    <Content Include="Assets\savanne1 - Copy.jpg" />
+    <Content Include="Assets\Elephant2.jpg" />
+    <Content Include="Assets\camel.jpg" />
+    <Content Include="Assets\polarbear.jpg" />
+    <Content Include="Assets\abe.jpg" />
+    <Content Include="Assets\rød-panda01.png" />
+    <Content Include="Assets\savanne2.jpg" />
+    <Content Include="Assets\Tucan.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
