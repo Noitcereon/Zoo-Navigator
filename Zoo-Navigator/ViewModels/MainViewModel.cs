@@ -28,7 +28,7 @@ namespace Zoo_Navigator.ViewModels
 
         public MainViewModel()
         {
-            Animal tiger = new Tiger(1, "undefined");
+            Animal tiger = new Tiger(1, "../Assets/tiger-image.jpg");
             tiger.AddAnimalFact("fact 1");
             tiger.AddAnimalFact("fact 2");
             tiger.AddAnimalFact("fact 3");
@@ -40,7 +40,7 @@ namespace Zoo_Navigator.ViewModels
             tiger.AddAnimalFact("fact 9");
             tiger.AddAnimalFact("fact 10");
 
-            Animal redPanda = new RedPanda(2, "undefined");
+            Animal redPanda = new RedPanda(2, "../Assets/redPanda-image.jpg");
             redPanda.AddAnimalFact("red panda fact 1");
             redPanda.AddAnimalFact("red panda fact 2");
             redPanda.AddAnimalFact("red panda fact 3");

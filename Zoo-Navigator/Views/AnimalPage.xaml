@@ -63,7 +63,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="8" Margin="150,19,0,78" Grid.Row="2">
-            <Image Source="../Assets/c1_1720911_190729141725.jpg"/>
+            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}"/>
 
 
             <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
