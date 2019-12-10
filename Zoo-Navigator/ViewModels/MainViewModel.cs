@@ -38,7 +38,7 @@ namespace Zoo_Navigator.ViewModels
             tiger.AddAnimalFact("Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!");
             tiger.AddAnimalFact("Tigers live between 20-26 years in the wild.");
 
-            Animal redPanda = new RedPanda(2, "../Assets/redPanda-image.jpg");
+            Animal redPanda = new RedPanda(2, "../Assets/rød-panda01.png");
             redPanda.AddAnimalFact("red panda fact 1");
             redPanda.AddAnimalFact("red panda fact 2");
             redPanda.AddAnimalFact("red panda fact 3");
