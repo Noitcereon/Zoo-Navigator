@@ -13,7 +13,7 @@
         <viewModels:MainViewModel/>
     </Page.DataContext>
 
-    <Grid Height="1000" VerticalAlignment="Center">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg"/>
         </Grid.Background>
@@ -65,41 +65,17 @@
         <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="8" Margin="150,19,0,78" Grid.Row="2">
             <Image Source="{Binding Instance.SelectedAnimal.ImagePath}"/>
 
-
-            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
-                <ListView ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}"/>
-            </StackPanel>
-
-            <!--<StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Tigers are easily recognizable with their dark vertical stripes and reddish/orange fur."/>
-            </StackPanel>
-
-            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20" >
-                <TextBlock Text="The Bengal tiger is the most common tiger." />
-            </StackPanel>
-
-            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Tigers live between 20-26 years in the wild."/>
-            </StackPanel>
-
             <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!" />
+                <ItemsControl ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel MinHeight="40" MaxHeight="60">
+                                <TextBlock Text="{Binding}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
-
-            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Adult tigers generally live alone."/>
-            </StackPanel>
-
-            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Unlike most other cats, tigers are great swimmers and actually like the water." />
-            </StackPanel>
-
-            <StackPanel Background="Orange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <TextBlock Text="Cubs are born blind and only open their eyes 1-2 weeks after birth."/>
-            </StackPanel>-->
-
         </StackPanel>
-
     </Grid>
-
 </Page>

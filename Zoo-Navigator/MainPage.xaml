@@ -52,7 +52,6 @@
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <!-- TODO: replace onclick navigation with relaycommands. -->
             <Button Content="Kort" Style="{StaticResource MenuButton}" Click="Button_NavigateCheat_Click"></Button>
             <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
             <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
@@ -66,7 +65,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Background="OrangeRed" HorizontalAlignment="Center" Width="600">
-                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5" Content="{Binding AreaCategoryString}"></Button>
+                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5" Command="{Binding NavToCategory}" Content="{Binding AreaCategoryString}"></Button>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -76,7 +75,7 @@
 
         <Button Padding="-3" Grid.Column="1" Margin="10,50,0,0" Grid.Row="3" VerticalAlignment="Top" Height="70" Width="91" Grid.RowSpan="2" >
             <StackPanel Orientation="Horizontal" >
-                <Image Source="../Assets/c1_1720911_190729141725.jpg"></Image>
+                <Image Source="../Assets/tiger-image.jpg"></Image>
             </StackPanel>
             <custom:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">

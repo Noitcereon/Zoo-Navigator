@@ -25,20 +25,18 @@ namespace Zoo_Navigator.ViewModels
         private List<Category> _categories;
         private readonly SharedKnowledge _shared;
         private RCO _nextCommand;
+        private RelayCommand _navToCategoryCommand;
 
         public MainViewModel()
         {
             Animal tiger = new Tiger(1, "../Assets/tiger-image.jpg");
-            tiger.AddAnimalFact("fact 1");
-            tiger.AddAnimalFact("fact 2");
-            tiger.AddAnimalFact("fact 3");
-            tiger.AddAnimalFact("fact 4");
-            tiger.AddAnimalFact("fact 5");
-            tiger.AddAnimalFact("fact 6");
-            tiger.AddAnimalFact("fact 7");
-            tiger.AddAnimalFact("fact 8");
-            tiger.AddAnimalFact("fact 9");
-            tiger.AddAnimalFact("fact 10");
+            tiger.AddAnimalFact("Tigers are easily recognizable with their dark vertical stripes and reddish/orange fur.");
+            tiger.AddAnimalFact("Unlike most other cats, tigers are great swimmers and actually like the water.");
+            tiger.AddAnimalFact("Cubs are born blind and only open their eyes 1-2 weeks after birth.");
+            tiger.AddAnimalFact("Adult tigers generally live alone.");
+            tiger.AddAnimalFact("The Bengal tiger is the most common tiger.");
+            tiger.AddAnimalFact("Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!");
+            tiger.AddAnimalFact("Tigers live between 20-26 years in the wild.");
 
             Animal redPanda = new RedPanda(2, "../Assets/redPanda-image.jpg");
             redPanda.AddAnimalFact("red panda fact 1");
@@ -76,6 +74,7 @@ namespace Zoo_Navigator.ViewModels
             _popCommand = new RelayCommand(Tænd);
             _backCommand = new RelayCommand(GoBack);
             _nextCommand = new RCO(Next);
+            _navToCategoryCommand = new RelayCommand(GoToCategory);
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
@@ -87,17 +86,23 @@ namespace Zoo_Navigator.ViewModels
 
         private void Next(object obj)
         {
-            var animalPair = (KeyValuePair<int, Animal>) obj;
+            var animalPair = (KeyValuePair<int, Animal>)obj;
             _shared.SelectedAnimal = animalPair.Value;
 
-           Frame f = (Frame) Window.Current.Content;
+            Frame f = (Frame)Window.Current.Content;
             f.Navigate(typeof(AnimalPage));
+        }
+
+        private void GoToCategory()
+        {
+            Frame f = (Frame)Window.Current.Content;
+            f.Navigate(typeof(Categories));
         }
 
         private void GoBack()
         {
-            Frame f = (Frame) Window.Current.Content;
-            if (f.CanGoBack) { f.GoBack();}
+            Frame f = (Frame)Window.Current.Content;
+            if (f.CanGoBack) { f.GoBack(); }
         }
         #endregion
 
@@ -116,6 +121,11 @@ namespace Zoo_Navigator.ViewModels
         public RelayCommand PopCommand
         {
             get { return _popCommand; }
+        }
+
+        public RelayCommand NavToCategoryCommand
+        {
+            get => _navToCategoryCommand;
         }
 
         public RelayCommand BackCommand
