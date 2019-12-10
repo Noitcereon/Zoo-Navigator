@@ -76,6 +76,7 @@ namespace Zoo_Navigator.ViewModels
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
+
         #region Methods
         private void Tænd()
         {

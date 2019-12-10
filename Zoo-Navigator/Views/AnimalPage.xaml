@@ -62,14 +62,22 @@
             <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="9" HorizontalAlignment="Center" Width="500" Margin="0,0,0,10" VerticalAlignment="Top" Grid.Row="1">
-            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" Height="300" />
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="9" HorizontalAlignment="Center" Width="500" Margin="0,0,0,10" VerticalAlignment="Top" Grid.Row="1">
+            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" />
 
             <StackPanel Background="DarkOrange" >
-                <ListView ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}"/>
+                <ListBox Background="DarkOrange" ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}" Height="500" AllowFocusOnInteraction="False">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <ScrollViewer VerticalScrollMode="Enabled">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding}" TextWrapping="Wrap"></TextBlock>
+                                    </StackPanel>
+                            </ScrollViewer>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
         </StackPanel>
-
     </Grid>
-
 </Page>
