@@ -87,9 +87,10 @@ namespace Zoo_Navigator.ViewModels
 
         private void Next(object obj)
         {
-            _shared.SelectedAnimal = (Animal) obj;
+            var animalPair = (KeyValuePair<int, Animal>) obj;
+            _shared.SelectedAnimal = animalPair.Value;
 
-            Frame f = (Frame) Window.Current.Content;
+           Frame f = (Frame) Window.Current.Content;
             f.Navigate(typeof(AnimalPage));
         }
 
