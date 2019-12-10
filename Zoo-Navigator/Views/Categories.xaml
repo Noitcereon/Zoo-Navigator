@@ -74,17 +74,16 @@
         <GridView ItemsSource="{Binding Animals}" SelectedItem="{Binding Instance.SelectedAnimal, Mode=TwoWay}" x:Name="OuterRef"  Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Button Command="{Binding ElementName=OuterRef, Path=DataContext.NextCommand}" CommandParameter="{Binding Mode=TwoWay}">
-                        <StackPanel Height="350" Width="250" Margin="0">
-                            <Border Background="black" Height="50" >
+                    <Button Height="350" Width="250" Padding="0" Margin="0" Command="{Binding ElementName=OuterRef, Path=DataContext.NextCommand}" CommandParameter="{Binding Mode=TwoWay}">
+
+                        <StackPanel Padding="0"  Margin="0">
+                            <Border Background="black" Height="50" Width="250" >
                                 <TextBlock Text="{Binding Value.Species}" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
                             </Border>
-                            <StackPanel >
-
-                                <Image Source="../Assets/StoreLogo.png"/>
-                                <Image Source="{Binding Value.ImagePath}" Stretch="Fill" />
-                            </StackPanel>
+                            
+                            <Image Source="{Binding Value.ImagePath}" Height="300" MaxWidth="250" Stretch="Fill" />
                         </StackPanel>
+
                     </Button>
 
 
@@ -97,55 +96,6 @@
 
 
 
-        <!--<StackPanel Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" Grid.ColumnSpan="2" Margin="0,20,0,0" >
-            <Border Background="black" Margin="0" Height="50" >
-                <TextBlock Text="Løve" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" ></TextBlock>
-            </Border>
-            <Button Margin="0" Width="300" Height="300">
-                <Button.Content>
-                    <Image Source="../Assets/StoreLogo.png" Stretch="Fill" />
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.RowSpan="4" Grid.Column="7" Grid.ColumnSpan="2" Margin="0,20,0,0" >
-            <Border Background="black" Margin="0" Height="50" >
-                <TextBlock Text="Løve" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" ></TextBlock>
-            </Border>
-            <Button Margin="0" Width="300" Height="300">
-                <Button.Content>
-                    <Image Source="../Assets/StoreLogo.png" Stretch="Fill" />
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="5" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,20,0,0" >
-            <Border Background="black" Margin="0" Height="50" >
-                <TextBlock Text="Løve" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" ></TextBlock>
-            </Border>
-            <Button Margin="0" Width="300" Height="300">
-                <Button.Content>
-                    <Image Source="../Assets/StoreLogo.png" Stretch="Fill" />
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="5" Grid.RowSpan="4" Grid.Column="4" Grid.ColumnSpan="2" Margin="0,20,0,0" >
-            <Border Background="black" Margin="0" Height="50" >
-                <TextBlock Text="Løve" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" ></TextBlock>
-            </Border>
-            <Button Margin="0" Width="300" Height="300">
-                <Button.Content>
-                    <Image Source="../Assets/StoreLogo.png" Stretch="Fill" />
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="5" Grid.RowSpan="4" Grid.Column="7" Grid.ColumnSpan="2" Margin="0,20,0,0" >
-            <Border Background="black" Margin="0" Height="50" >
-                <TextBlock Text="Løve" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" ></TextBlock>
-            </Border>
-            <Button Margin="0" Width="300" Height="300">
-                <Button.Content>
-                    <Image Source="../Assets/StoreLogo.png" Stretch="Fill" />
-                </Button.Content>
-            </Button>
-        </StackPanel>-->
+        
     </Grid>
 </Page>

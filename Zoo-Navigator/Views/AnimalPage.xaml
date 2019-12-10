@@ -15,7 +15,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg"/>
+            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg" Opacity=".8" />
         </Grid.Background>
         <!-- Big grid -->
         <!-- #region grid definition -->
@@ -48,7 +48,7 @@
         <!-- 10 Rows -->
         <!-- #endregion -->
 
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                     Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}">
@@ -62,21 +62,14 @@
             <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"/>
         </StackPanel>
 
-        <!--  StackPanel -->
-        <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="8" Margin="0, 0, 10, 0" HorizontalAlignment="Center" Width="500" Grid.Row="1">
-            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" MaxHeight="300"/>
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="9" HorizontalAlignment="Center" Width="500" Margin="0,0,0,10" VerticalAlignment="Top" Grid.Row="1">
+            <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" Height="300" />
 
-            <StackPanel Background="DarkOrange" Margin="0,10,0,0" Padding="0,0,0,20">
-                <ItemsControl ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical" Padding="5">
-                                <TextBlock Text="{Binding}" FontSize="16" TextWrapping="Wrap"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+            <StackPanel Background="DarkOrange" >
+                <ListView ItemsSource="{Binding Instance.SelectedAnimal.AnimalFacts}"/>
             </StackPanel>
         </StackPanel>
+
     </Grid>
+
 </Page>

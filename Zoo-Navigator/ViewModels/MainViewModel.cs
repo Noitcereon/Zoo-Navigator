@@ -47,16 +47,14 @@ namespace Zoo_Navigator.ViewModels
             redPanda.AddAnimalFact("red panda fact 6");
 
             _animals = new Dictionary<int, Animal>();
-
-            _animals.Add(redPanda.AnimalId, redPanda);
             _animals.Add(tiger.AnimalId, tiger);
-
-            /*
+            _animals.Add(redPanda.AnimalId, redPanda);
+            
             _animals.Add(tiger.AnimalId+3, tiger);
             _animals.Add(redPanda.AnimalId+4, redPanda);
             _animals.Add(redPanda.AnimalId+5, redPanda);
             _animals.Add(tiger.AnimalId+8, tiger);
-            */
+            
             _categories = new List<Category>();
 
             Category asien = new Category(Enum.AreaCategory.Asien, "Asien");
