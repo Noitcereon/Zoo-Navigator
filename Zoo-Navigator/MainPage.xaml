@@ -61,11 +61,12 @@
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="6" Grid.Row="3" Width="300" Height="800">
             <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True">
-                <ItemsControl ItemsSource="{Binding Categories}">
+                <ItemsControl ItemsSource="{Binding Categories}" x:Name="MenuItemsControl">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Background="OrangeRed" HorizontalAlignment="Center" Width="600">
-                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5" Command="{Binding NavToCategory}" Content="{Binding AreaCategoryString}"></Button>
+                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5"
+                                        Command="{Binding ElementName=MenuItemsControl, Path=DataContext.NavToCategoryCommand}" Content="{Binding AreaCategoryString}"></Button>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -73,9 +74,19 @@
             </Popup>
         </StackPanel>
 
-        <Button Padding="-3" Grid.Column="1" Margin="10,50,0,0" Grid.Row="3" VerticalAlignment="Top" Height="70" Width="91" Grid.RowSpan="2" >
+        <Button Padding="-1" Margin="10, 0, 0, 20" Grid.Column="1"  Grid.Row="3" Width="70" Height="50" Grid.RowSpan="2" BorderBrush="Blue" BorderThickness="2">
             <StackPanel Orientation="Horizontal" >
                 <Image Source="../Assets/tiger-image.jpg"></Image>
+            </StackPanel>
+            <custom:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="Zoo_Navigator.Views.AnimalPage"/>
+                </core:EventTriggerBehavior>
+            </custom:Interaction.Behaviors>
+        </Button>
+        <Button Padding="-1" Margin="10, 0, 0, 40" Grid.Column="2"  Grid.Row="3" Width="60" Height="50" Grid.RowSpan="2" BorderBrush="Blue" BorderThickness="2">
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="../Assets/rød-panda01.png"></Image>
             </StackPanel>
             <custom:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
