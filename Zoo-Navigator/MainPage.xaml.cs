@@ -27,11 +27,5 @@ namespace Zoo_Navigator
         {
             this.InitializeComponent();
         }
-
-
-        private void Button_NavigateCheat_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Categories));
-        }
     }
 }

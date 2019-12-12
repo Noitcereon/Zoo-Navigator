@@ -50,10 +50,16 @@
         <!-- #endregion -->
 
         <!-- temporary background on StackPanel. -->
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray" CornerRadius="5"
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <Button Content="Kort" Style="{StaticResource MenuButton}" Click="Button_NavigateCheat_Click"></Button>
+            <Button Content="Kort" Style="{StaticResource MenuButton}">
+                <custom:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Zoo_Navigator.MainPage" />
+                    </core:EventTriggerBehavior>
+                </custom:Interaction.Behaviors>
+            </Button>
             <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
             <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
 
