@@ -18,7 +18,7 @@ namespace Zoo_Navigator.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        private bool _isMenuOpen = true;
+        private bool _isMenuOpen;
         private Dictionary<int, Animal> _animals;
         private RelayCommand _popCommand;
         private RelayCommand _backCommand;
