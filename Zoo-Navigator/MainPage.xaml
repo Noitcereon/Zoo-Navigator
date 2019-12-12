@@ -20,7 +20,7 @@
             <ImageBrush ImageSource="Assets/kort-over-zoo-2019-023.png"></ImageBrush>
         </Grid.Background>
         <!-- Big grid -->
-
+        <!-- #region Grid Definitions -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -47,6 +47,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <!-- 10 Rows -->
+        <!-- #endregion -->
 
         <!-- temporary background on StackPanel. -->
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray"
@@ -74,25 +75,17 @@
             </Popup>
         </StackPanel>
 
-        <Button Padding="-1" Margin="10, 0, 0, 20" Grid.Column="1"  Grid.Row="3" Width="70" Height="50" Grid.RowSpan="2" BorderBrush="Blue" BorderThickness="2">
-            <StackPanel Orientation="Horizontal" >
-                <Image Source="../Assets/tiger-image.jpg"></Image>
+        <Button Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Padding="-1" Margin="10, 0, 0, 20"  Width="70" Height="50"  BorderBrush="Blue" BorderThickness="2"
+                Command ="{Binding NavToTigerCommand}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Tiger.ImagePath}"></Image>
             </StackPanel>
-            <custom:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="Zoo_Navigator.Views.AnimalPage"/>
-                </core:EventTriggerBehavior>
-            </custom:Interaction.Behaviors>
         </Button>
-        <Button Padding="-1" Margin="10, 0, 0, 40" Grid.Column="2"  Grid.Row="3" Width="60" Height="50" Grid.RowSpan="2" BorderBrush="Blue" BorderThickness="2">
+        <Button Padding="-1" Margin="10, 0, 0, 40" Grid.Column="2"  Grid.Row="3" Width="60" Height="50" Grid.RowSpan="2" BorderBrush="Blue" BorderThickness="2"
+                Command ="{Binding NavToRedPandaCommand}">
             <StackPanel Orientation="Horizontal" >
-                <Image Source="../Assets/rød-panda01.png"></Image>
+                <Image Source="{Binding RedPanda.ImagePath}"></Image>
             </StackPanel>
-            <custom:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="Zoo_Navigator.Views.AnimalPage"/>
-                </core:EventTriggerBehavior>
-            </custom:Interaction.Behaviors>
         </Button>
 
     </Grid>

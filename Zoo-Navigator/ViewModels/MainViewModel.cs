@@ -25,36 +25,47 @@ namespace Zoo_Navigator.ViewModels
         private List<Category> _categories;
         private readonly SharedKnowledge _shared;
         private RCO _nextCommand;
+        private RelayCommand _navToTigerCommand;
+        private RelayCommand _navToRedPandaCommand;
         private RelayCommand _navToCategoryCommand;
 
         public MainViewModel()
         {
+            #region Animals
             Animal tiger = new Tiger(1, "../Assets/tiger-image.jpg");
-            tiger.AddAnimalFact("Tigers are easily recognizable with their dark vertical stripes and reddish/orange fur.");
-            tiger.AddAnimalFact("Unlike most other cats, tigers are great swimmers and actually like the water.");
+            tiger.AddAnimalFact("Tigere er nemme at genkende med deres mørke striber og rød/orange pels.");
+            tiger.AddAnimalFact("Modsat andre kattedyr, er tigere gode til at svømme og kan lide vand.");
             tiger.AddAnimalFact("Cubs are born blind and only open their eyes 1-2 weeks after birth.");
-            tiger.AddAnimalFact("Adult tigers generally live alone.");
+            tiger.AddAnimalFact("Voksne tigere lever som regel alene.");
             tiger.AddAnimalFact("The Bengal tiger is the most common tiger.");
             tiger.AddAnimalFact("Tigers are the largest cat species in the world reaching up to 3.3 meters in length and weighing up to 670 pounds!");
-            tiger.AddAnimalFact("Tigers live between 20-26 years in the wild.");
+            tiger.AddAnimalFact("Tigere lever mellem 20-26 år i naturen");
 
             Animal redPanda = new RedPanda(2, "../Assets/rød-panda01.png");
-            redPanda.AddAnimalFact("red panda fact 1");
-            redPanda.AddAnimalFact("red panda fact 2");
-            redPanda.AddAnimalFact("red panda fact 3");
-            redPanda.AddAnimalFact("red panda fact 4");
-            redPanda.AddAnimalFact("red panda fact 5");
-            redPanda.AddAnimalFact("red panda fact 6");
+            redPanda.AddAnimalFact("Røde pandaer er en truet dyreart. De har 2 uddøde relativer.");
+            redPanda.AddAnimalFact("De er vegetariske karnivorer");
+            redPanda.AddAnimalFact("En huskat er nogenlunde på samme størrelse som en rød panda, men røde pandaers hale kan blive helt op til omkring 46 cm.");
+            redPanda.AddAnimalFact("En rød panda bruger dens hale til både balance og til at holde varmen.");
+            redPanda.AddAnimalFact("De er mestre i at stikke af og har op til flere gange stukket af fra zoologiske haver.");
+            redPanda.AddAnimalFact("Browseren Firefox er navngivet efter den røde panda, som også til tider bliver kaldt Firefox.");
+            redPanda.AddAnimalFact("Røde pandaer har en 'falsk tommelfinger', som de bruger til at klatre og spise bambus.");
 
             _animals = new Dictionary<int, Animal>();
             _animals.Add(tiger.AnimalId, tiger);
             _animals.Add(redPanda.AnimalId, redPanda);
-            
-            _animals.Add(tiger.AnimalId+3, tiger);
-            _animals.Add(redPanda.AnimalId+4, redPanda);
-            _animals.Add(redPanda.AnimalId+5, redPanda);
-            _animals.Add(tiger.AnimalId+8, tiger);
-            
+
+            _animals.Add(tiger.AnimalId + 3, tiger);
+            _animals.Add(redPanda.AnimalId + 4, redPanda);
+            _animals.Add(redPanda.AnimalId + 5, redPanda);
+            _animals.Add(tiger.AnimalId + 8, tiger);
+
+            // Til MainPage.xml
+            Tiger = tiger;
+            RedPanda = redPanda;
+
+            #endregion
+
+            #region Categories
             _categories = new List<Category>();
 
             Category asien = new Category(Enum.AreaCategory.Asien, "Asien");
@@ -68,11 +79,15 @@ namespace Zoo_Navigator.ViewModels
             _categories.Add(savannen);
             _categories.Add(boerneZoo);
             _categories.Add(verdensPladsen);
+            #endregion
 
             _popCommand = new RelayCommand(Tænd);
             _backCommand = new RelayCommand(GoBack);
             _nextCommand = new RCO(Next);
             _navToCategoryCommand = new RelayCommand(GoToCategory);
+            _navToTigerCommand = new RelayCommand(NavToTiger);
+            _navToRedPandaCommand = new RelayCommand(NavToRedPanda);
+
             _isMenuOpen = false;
             _shared = SharedKnowledge.Instance;
         }
@@ -91,7 +106,21 @@ namespace Zoo_Navigator.ViewModels
             Frame f = (Frame)Window.Current.Content;
             f.Navigate(typeof(AnimalPage));
         }
+        private void NavToTiger()
+        {
+            _shared.SelectedAnimal = Tiger;
 
+            Frame f = (Frame)Window.Current.Content;
+            f.Navigate(typeof(AnimalPage));
+        }
+        private void NavToRedPanda()
+        {
+            _shared.SelectedAnimal = RedPanda;
+
+            Frame f = (Frame)Window.Current.Content;
+            f.Navigate(typeof(AnimalPage));
+        }
+        
         private void GoToCategory()
         {
             Frame f = (Frame)Window.Current.Content;
@@ -106,6 +135,9 @@ namespace Zoo_Navigator.ViewModels
         #endregion
 
         #region Properties
+        public Animal Tiger { get; }
+        public Animal RedPanda { get; }
+
         public bool IsMenuOpen
         {
             get => _isMenuOpen;
@@ -135,6 +167,16 @@ namespace Zoo_Navigator.ViewModels
         public RCO NextCommand
         {
             get { return _nextCommand; }
+        }
+
+        public RelayCommand NavToTigerCommand
+        {
+            get { return _navToTigerCommand; }
+        }
+
+        public RelayCommand NavToRedPandaCommand
+        {
+            get { return _navToRedPandaCommand; }
         }
 
         public List<Category> Categories
