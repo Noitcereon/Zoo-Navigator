@@ -74,12 +74,12 @@ namespace Zoo_Navigator.ViewModels
             sloth.AddAnimalFact("Dovendyr kan holde vejret i ca. 40 min og svømmer 3 gange hurtigere end det bevæger sig på land.");
             sloth.AddAnimalFact("Dovendyr bevæger sig generelt ikke længere end 38 meter om dagen og bevæger sig kun 30 cm i minuttet når det befinder sig på jorden");
 
-            Animal chimpanzee = new Animal(6, "Chimpanzee", "../Assets/monkey-selfie - Copy.jpg", Enum.AreaCategory.Asien);
-            chimpanzee.AddAnimalFact("Chimpanse fact 1");
-            chimpanzee.AddAnimalFact("Chimpanse fact 2");
-            chimpanzee.AddAnimalFact("Chimpanse fact 3");
-            chimpanzee.AddAnimalFact("Chimpanse fact 4");
-            chimpanzee.AddAnimalFact("Chimpanse fact 5");
+            Animal ape = new Animal(6, "Abe", "../Assets/monkey-selfie - Copy.jpg", Enum.AreaCategory.Asien);
+            ape.AddAnimalFact("Abe fact 1");
+            ape.AddAnimalFact("Abe fact 2");
+            ape.AddAnimalFact("Abe fact 3");
+            ape.AddAnimalFact("Abe fact 4");
+            ape.AddAnimalFact("Abe fact 5");
 
             _animals = new Dictionary<int, Animal>();
             _animals.Add(tiger.AnimalId, tiger);
@@ -87,7 +87,7 @@ namespace Zoo_Navigator.ViewModels
             _animals.Add(leopard.AnimalId, leopard);
             _animals.Add(tucan.AnimalId, tucan);
             _animals.Add(sloth.AnimalId, sloth);
-            _animals.Add(chimpanzee.AnimalId, chimpanzee);
+            _animals.Add(ape.AnimalId, ape);
 
 
             // Til MainPage.xml
