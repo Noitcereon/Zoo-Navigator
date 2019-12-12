@@ -50,37 +50,39 @@
         <!-- #endregion -->
 
         <!-- temporary background on StackPanel. -->
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightGray" CornerRadius="5"
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" 
               Margin="10">
             <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
-            <Button Content="Kort" Style="{StaticResource MenuButton}">
+            <Button Content="Kort" Style="{StaticResource MenuButton}" CornerRadius="5">
                 <custom:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="Zoo_Navigator.MainPage" />
                     </core:EventTriggerBehavior>
                 </custom:Interaction.Behaviors>
             </Button>
-            <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}"></Button>
-            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}"></Button>
+            <Button Content="Menu" Command="{Binding PopCommand}"  Style="{StaticResource MenuButton}" CornerRadius="5"></Button>
+            <Button Content="Tilbage" Command="{Binding BackCommand}" Style="{StaticResource BackButton}" CornerRadius="5"></Button>
 
         </StackPanel>
         <!-- Button panel END -->
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="6" Grid.Row="3" Width="300" Height="800">
-            <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True">
-                <ItemsControl ItemsSource="{Binding Categories}" x:Name="MenuItemsControl">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Background="OrangeRed" HorizontalAlignment="Center" Width="600">
-                                <Button Width="400" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5"
-                                        Command="{Binding ElementName=MenuItemsControl, Path=DataContext.NavToCategoryCommand}" Content="{Binding AreaCategoryString}"></Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+            <Popup x:Name="myPopup" IsOpen="{Binding IsMenuOpen}" IsLightDismissEnabled="True" >
+                <StackPanel Background="#FFF8ECDF" CornerRadius="10" Padding="10" Width="600">
+                    <ItemsControl ItemsSource="{Binding Categories}" x:Name="MenuItemsControl">
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Button Width="500" Background="CornflowerBlue" CornerRadius="5" HorizontalAlignment="Center" FontSize="42" Margin="0, 0, 0, 5"
+                                            Command="{Binding ElementName=MenuItemsControl, Path=DataContext.NavToCategoryCommand}" Content="{Binding AreaCategoryString}"></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
             </Popup>
         </StackPanel>
-
         <Button Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Padding="-1" Margin="10, 0, 0, 20"  Width="70" Height="50"  BorderBrush="Blue" BorderThickness="2"
                 Command ="{Binding NavToTigerCommand}">
             <StackPanel Orientation="Horizontal">
