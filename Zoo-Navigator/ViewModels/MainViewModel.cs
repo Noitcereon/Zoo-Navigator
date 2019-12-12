@@ -50,14 +50,45 @@ namespace Zoo_Navigator.ViewModels
             redPanda.AddAnimalFact("Browseren Firefox er navngivet efter den røde panda, som også til tider bliver kaldt Firefox.");
             redPanda.AddAnimalFact("Røde pandaer har en 'falsk tommelfinger', som de bruger til at klatre og spise bambus.");
 
+            Animal leopard = new Animal(3, "Leopard", "../Assets/leopard.jpg", Enum.AreaCategory.Asien);
+            leopard.AddAnimalFact("Leopard fact 1");
+            leopard.AddAnimalFact("Leopard fact 2");
+            leopard.AddAnimalFact("Leopard fact 3");
+            leopard.AddAnimalFact("Leopard fact 4");
+            leopard.AddAnimalFact("Leopard fact 5");
+            leopard.AddAnimalFact("Leopard fact 6");
+
+            Animal tucan = new Animal(4, "Tucan", "../Assets/Tucan.jpg", Enum.AreaCategory.Asien);
+            tucan.AddAnimalFact("Tucan fact 1");
+            tucan.AddAnimalFact("Tucan fact 2");
+            tucan.AddAnimalFact("Tucan fact 3");
+            tucan.AddAnimalFact("Tucan fact 4");
+            tucan.AddAnimalFact("Tucan fact 5");
+            tucan.AddAnimalFact("Tucan fact 6");
+
+            Animal sloth = new Animal(5, "Sloth", "../Assets/sloth.jpg", Enum.AreaCategory.Asien);
+            sloth.AddAnimalFact("Alger gror på dovendyr, hvilket fungerer som camouflage.");
+            sloth.AddAnimalFact("Dovendyr defækerer og urinerer en gang om ugen.");
+            sloth.AddAnimalFact("Et dovendyr bruger ca. 90% af tiden på at hænge oppefra og ned fra grene.");
+            sloth.AddAnimalFact("Dovendyr kan dreje deres hoved på en 270 graders akse.");
+            sloth.AddAnimalFact("Dovendyr kan holde vejret i ca. 40 min og svømmer 3 gange hurtigere end det bevæger sig på land.");
+            sloth.AddAnimalFact("Dovendyr bevæger sig generelt ikke længere end 38 meter om dagen og bevæger sig kun 30 cm i minuttet når det befinder sig på jorden");
+
+            Animal chimpanzee = new Animal(6, "Chimpanzee", "../Assets/monkey-selfie - Copy.jpg", Enum.AreaCategory.Asien);
+            chimpanzee.AddAnimalFact("Chimpanse fact 1");
+            chimpanzee.AddAnimalFact("Chimpanse fact 2");
+            chimpanzee.AddAnimalFact("Chimpanse fact 3");
+            chimpanzee.AddAnimalFact("Chimpanse fact 4");
+            chimpanzee.AddAnimalFact("Chimpanse fact 5");
+
             _animals = new Dictionary<int, Animal>();
             _animals.Add(tiger.AnimalId, tiger);
             _animals.Add(redPanda.AnimalId, redPanda);
+            _animals.Add(leopard.AnimalId, leopard);
+            _animals.Add(tucan.AnimalId, tucan);
+            _animals.Add(sloth.AnimalId, sloth);
+            _animals.Add(chimpanzee.AnimalId, chimpanzee);
 
-            _animals.Add(tiger.AnimalId + 3, tiger);
-            _animals.Add(redPanda.AnimalId + 4, redPanda);
-            _animals.Add(redPanda.AnimalId + 5, redPanda);
-            _animals.Add(tiger.AnimalId + 8, tiger);
 
             // Til MainPage.xml
             Tiger = tiger;

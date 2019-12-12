@@ -17,12 +17,7 @@ namespace Zoo_Navigator.Common
 
         private SharedKnowledge()
         {
-            Animal a = new Animal(200, "kat", "", Enum.AreaCategory.Børnezoo);
-            a.AnimalFacts.Add("Svend");
-            a.AnimalFacts.Add("fact 1");
-            a.AnimalFacts.Add("Hello bob");
-            a.AddAnimalFact("hello johan");
-            _selectedAnimal = a;
+            Animal a = new Animal();
         }
 
         public static SharedKnowledge Instance
