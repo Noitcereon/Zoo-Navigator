@@ -27,6 +27,9 @@
     </Page.DataContext>
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg" Opacity=".8" />
+        </Grid.Background>
         <!-- #region grid definition -->
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -80,7 +83,7 @@
                             <Border Background="black" Height="50" Width="250" >
                                 <TextBlock Text="{Binding Value.Species}" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
                             </Border>
-                            
+
                             <Image Source="{Binding Value.ImagePath}" Height="300" MaxWidth="250" Stretch="Fill" />
                         </StackPanel>
 
