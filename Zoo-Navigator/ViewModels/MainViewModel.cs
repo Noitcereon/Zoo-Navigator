@@ -31,7 +31,7 @@ namespace Zoo_Navigator.ViewModels
 
         public MainViewModel()
         {
-            #region Animals
+            #region Animal initilization
             Animal tiger = new Tiger(1, "../Assets/tiger-image.jpg");
             tiger.AddAnimalFact("Tigere er nemme at genkende med deres mørke striber og rød/orange pels.");
             tiger.AddAnimalFact("Modsat andre kattedyr, er tigere gode til at svømme og kan lide vand.");
@@ -81,6 +81,8 @@ namespace Zoo_Navigator.ViewModels
             ape.AddAnimalFact("Abe fact 4");
             ape.AddAnimalFact("Abe fact 5");
 
+            #endregion
+
             _animals = new Dictionary<int, Animal>();
             _animals.Add(tiger.AnimalId, tiger);
             _animals.Add(redPanda.AnimalId, redPanda);
@@ -94,7 +96,7 @@ namespace Zoo_Navigator.ViewModels
             Tiger = tiger;
             RedPanda = redPanda;
 
-            #endregion
+            
 
             #region Categories
             _categories = new List<Category>();

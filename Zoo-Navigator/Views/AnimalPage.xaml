@@ -18,7 +18,7 @@
             <ImageBrush ImageSource="../Assets/1210-lavlandsregnskov-RT2048.jpg" Opacity=".8" />
         </Grid.Background>
         <!-- Big grid -->
-        <!-- #region grid definition -->
+        <!-- #region Grid Definition -->
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -50,7 +50,6 @@
 
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                     Margin="10">
-            <!-- TODO: make the buttons not go 'white' or ´transparent', when you hover/click them -->
             <Button Content="Kort" Style="{StaticResource MenuButton}" CornerRadius="5">
                 <Custom:Interaction.Behaviors>
                     <Custom1:EventTriggerBehavior EventName="Click">
