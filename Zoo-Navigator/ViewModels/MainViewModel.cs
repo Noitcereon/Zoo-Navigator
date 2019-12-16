@@ -59,14 +59,14 @@ namespace Zoo_Navigator.ViewModels
             leopard.AddAnimalFact("Leopard fact 6");
 
             Animal tucan = new Animal(4, "Tucan", "../Assets/Tucan.jpg", Enum.AreaCategory.Asien);
-            tucan.AddAnimalFact("Tucan fact 1");
+            tucan.AddAnimalFact("Tucanens næb er stort, men skrøbeligt.");
             tucan.AddAnimalFact("Tucan fact 2");
             tucan.AddAnimalFact("Tucan fact 3");
             tucan.AddAnimalFact("Tucan fact 4");
             tucan.AddAnimalFact("Tucan fact 5");
             tucan.AddAnimalFact("Tucan fact 6");
 
-            Animal sloth = new Animal(5, "Sloth", "../Assets/sloth.jpg", Enum.AreaCategory.Asien);
+            Animal sloth = new Animal(5, "Dovendyr", "../Assets/sloth.jpg", Enum.AreaCategory.Asien);
             sloth.AddAnimalFact("Alger gror på dovendyr, hvilket fungerer som camouflage.");
             sloth.AddAnimalFact("Dovendyr defækerer og urinerer en gang om ugen.");
             sloth.AddAnimalFact("Et dovendyr bruger ca. 90% af tiden på at hænge oppefra og ned fra grene.");
@@ -75,7 +75,7 @@ namespace Zoo_Navigator.ViewModels
             sloth.AddAnimalFact("Dovendyr bevæger sig generelt ikke længere end 38 meter om dagen og bevæger sig kun 30 cm i minuttet når det befinder sig på jorden");
 
             Animal ape = new Animal(6, "Abe", "../Assets/monkey-selfie - Copy.jpg", Enum.AreaCategory.Asien);
-            ape.AddAnimalFact("Abe fact 1");
+            ape.AddAnimalFact("Monkey see, monkey do.");
             ape.AddAnimalFact("Abe fact 2");
             ape.AddAnimalFact("Abe fact 3");
             ape.AddAnimalFact("Abe fact 4");
@@ -95,8 +95,6 @@ namespace Zoo_Navigator.ViewModels
             // Til MainPage.xml
             Tiger = tiger;
             RedPanda = redPanda;
-
-            
 
             #region Categories
             _categories = new List<Category>();
