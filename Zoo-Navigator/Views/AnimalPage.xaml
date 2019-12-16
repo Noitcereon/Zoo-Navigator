@@ -63,7 +63,7 @@
 
         <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="9" HorizontalAlignment="Center" Width="500" Margin="0,0,0,10" VerticalAlignment="Top" >
             <StackPanel Background="Black" CornerRadius="10, 10, 0, 0">
-                <TextBlock Text="{Binding Instance.SelectedAnimal.Species}" FontSize="36" HorizontalTextAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding Instance.SelectedAnimal.Species}" FontSize="36" Foreground="AntiqueWhite" HorizontalTextAlignment="Center"></TextBlock>
             </StackPanel>
             <Image Source="{Binding Instance.SelectedAnimal.ImagePath}" />
 
